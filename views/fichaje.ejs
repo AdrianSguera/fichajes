@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Fichajes</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <img src="img/fichaje.png" alt="logo" class="col-md-5">
+            <div class="col-md-7">
+                <% if (status=='entrada' ) { %>
+                    <h3 class="username">
+                        A trabajar, <%= username %>
+                    </h3>
+                    <form class="form" action="fichaje" method="post">
+                        <input type="hidden" name="username" value="<%= username %>">
+                        <input type="hidden" name="dni" value="<%= dni %>">
+                        <input class="btn btn-success boton" type="submit" value="Entrada">
+                    </form>
+                <% } %>
+                <% if (status=='salida' ) { %>
+                    <h3 class="username">
+                        Te salvaste por hoy, <%= username %>
+                    </h3>
+                    <form class="form" action="fichaje" method="post">
+                        <input type="hidden" name="username" value="<%= username %>">
+                        <input type="hidden" name="dni" value="<%= dni %>">
+                        <input class="btn btn-danger" type="submit" value="Salida">
+                    </form>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
